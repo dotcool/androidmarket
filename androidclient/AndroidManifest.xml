@@ -1,0 +1,101 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.netease.market"
+    android:versionCode="1000"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!-- 联网 -->
+    <uses-permission android:name="androd.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> 
+    <!-- 创建和删除文件 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 写文件 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_APN_SETTINGS" />
+    <!-- 接收短信权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- 发送短信权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 拨打电话权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+     <!-- 完全退出程序-->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    
+    <!-- 统计 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+   
+    <!-- 桌面快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/> 
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 安装 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+      <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.example.netease.market.MarketActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> 
+        <activity
+            android:name="com.example.netease.market.FileexActivity">
+        </activity>
+         <activity
+             android:name="com.example.netease.market.AppDetails"
+             android:theme="@style/Theme.HalfTranslucent" 
+		     android:screenOrientation="portrait" 
+		     android:configChanges="keyboardHidden|orientation" 
+		     android:launchMode="singleTask" 
+		     android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+        </activity>    
+        <receiver android:name="com.example.netease.market.AppReceiver"  
+                  android:label="@string/app_name">   
+            <intent-filter>  
+             <action android:name="android.intent.action.PACKAGE_ADDED" />  
+             <action android:name="android.intent.action.PACKAGE_REMOVED" />  
+              <data android:scheme="package" />  
+            </intent-filter>  
+        </receiver>  
+    </application>
+    
+</manifest>

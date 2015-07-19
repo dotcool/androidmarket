@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Market</string>
+    <string name="success">下载完成</string>
+    <string name="error">下载出错</string>
+    <string name="sdcarderror">没有SD卡</string>
+    <string name="mp3">http://abv.cn/music/光辉岁月.mp3</string>
+    <string name="app">http://cdn.javaapk.com/BD6D7CD18774CA8C038BC46F13EE9B9D.rar</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Black">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="soft_img">  
+           <item name="android:layout_width">60dp</item>
+           <item name="android:layout_height">60dp</item>
+           <item name="android:layout_margin">5dp</item>
+       </style>
+       <style name="soft_class_linear">
+           <item name="android:layout_width">fill_parent</item>
+           <item name="android:layout_height">wrap_content</item>
+           <item name="android:orientation">vertical</item>
+       </style>
+       
+       <style name="soft_class_tv">
+           <item name="android:layout_width">fill_parent</item>
+           <item name="android:layout_height">wrap_content</item>
+           <item name="android:textSize">15sp</item>
+           <item name="android:layout_margin">5dp</item>
+           
+      </style>
+      <style name="soft_tv">
+           <item name="android:layout_width">fill_parent</item>
+           <item name="android:layout_height">wrap_content</item>
+           <item name="android:textSize">13sp</item>
+           <item name="android:textColor">#AAAAAA</item>
+           <item name="android:layout_marginRight">4dp</item>
+      </style>
+    
+    <style name="Animation" />
+    <style name="Animation.Translucent" parent="@style/Animation">
+        <item name="android:windowEnterAnimation">@anim/translucent_zoom_out</item>
+        <item name="android:windowExitAnimation">@anim/translucent_zoom_exit</item>
+    </style>
+    
+    <style name="Theme.HalfTranslucent" parent="@android:style/Theme.Translucent">
+        <item name="android:windowBackground">@color/half_transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Translucent</item>
+        <item name="android:windowContentOverlay">@null</item> 
+    </style>
+    
+    <style name="dialog_tran" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+    <style name="dialog_untran" parent="dialog_tran">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>
